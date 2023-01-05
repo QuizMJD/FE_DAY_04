@@ -11,10 +11,15 @@
         <legend style="text-align:center">Create Account</legend>
         <div>
             username: <input type="text" id="username" name="username"><br><br>
-            password: <input type="password" id="password" name="password"><br><br>
+
+            email:<input type="email" id="email" /><br><br>
+            sdt:<input type="sdt" id="sdt" /><br><br>
+            <p>Giới tính</p>
+            <input type="radio" name="gender" checked/>Nam<br/>
+            <input type="radio" name="gender"/>Nữ<br/>
         </div>
         <div style="text-align:right;">
-            <input type="button" value="Enter" onclick="myFunction()">
+            <input type="button" value="Đăng ký" onclick="myFunction()">
             <input type="reset" value="Reset">
         </div>
     </fieldset>
@@ -23,13 +28,16 @@
         function myFunction() {
             // Lấy giá trị của trường username và password
             var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
+            var email = document.getElementById('email').value;
+            var sdt = document.getElementById('sdt').value;
+            var genders = document.getElementsByName('gender');
+            var chosenGender = genders[0].checked === true ? 'Nam' : 'Nữ';
 
             // Tạo phần tử p mới
             var p = document.createElement('p');
 
             // Gán giá trị của trường username và password vào phần tử p
-            p.innerHTML = 'Username: ' + username + '<br>Password: ' + password;
+            p.innerHTML = 'Username: ' + username + '<br>email: ' + email + '<br>sdt:'+sdt +'<br>Giới tính:'+chosenGender ;
 
             // Thêm phần tử p vào trang web
             document.body.appendChild(p);
