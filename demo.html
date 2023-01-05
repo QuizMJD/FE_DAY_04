@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<body>
+<p name="username"></p>
+<form name="demo" method="post" action="action_page.php">
+    <fieldset style="width:30px;">
+        <legend style="text-align:center">Create Account</legend>
+        <div>
+            username: <input type="text" id="username" name="username"><br><br>
+            password: <input type="password" id="password" name="password"><br><br>
+        </div>
+        <div style="text-align:right;">
+            <input type="button" value="Enter" onclick="myFunction()">
+            <input type="reset" value="Reset">
+        </div>
+    </fieldset>
+
+    <script>
+        function myFunction() {
+            // Lấy giá trị của trường username và password
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Tạo phần tử p mới
+            var p = document.createElement('p');
+
+            // Gán giá trị của trường username và password vào phần tử p
+            p.innerHTML = 'Username: ' + username + '<br>Password: ' + password;
+
+            // Thêm phần tử p vào trang web
+            document.body.appendChild(p);
+        }
+    </script>
+</form>
+</body>
+</html>
