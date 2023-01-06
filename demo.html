@@ -10,7 +10,7 @@
     <fieldset style="width:30px;">
         <legend style="text-align:center">Create Account</legend>
         <div>
-            username: <input type="text" id="username" name="username"><br><br>
+            username: <input type="text" id="username"><br><br>
 
             email:<input type="email" id="email" /><br><br>
             sdt:<input type="sdt" id="sdt" /><br><br>
@@ -26,22 +26,50 @@
 
     <script>
         function myFunction() {
-            // Lấy giá trị của trường username và password
-            var username = document.getElementById('username').value;
-            var email = document.getElementById('email').value;
-            var sdt = document.getElementById('sdt').value;
-            var genders = document.getElementsByName('gender');
-            var chosenGender = genders[0].checked === true ? 'Nam' : 'Nữ';
+            // let username,email,
+            // sdt ,
+            // genders,
+            // chosenGender
+           if(document.getElementById('username').value!= ""
+               &&document.getElementById('email').value!= ""
+               &&document.getElementById('sdt').value!= ""
+              // &&document.getElementById('gender').value!= ""
+               )
 
-            // Tạo phần tử p mới
-            var p = document.createElement('p');
 
-            // Gán giá trị của trường username và password vào phần tử p
-            p.innerHTML = 'Username: ' + username + '<br>email: ' + email + '<br>sdt:'+sdt +'<br>Giới tính:'+chosenGender ;
+           {
+              // alert("Hop le")
 
-            // Thêm phần tử p vào trang web
-            document.body.appendChild(p);
+                // Lấy giá trị của trường username và password
+               let username = document.getElementById('username').value;
+               let email = document.getElementById('email').value;
+               let sdt = document.getElementById('sdt').value;
+               let genders = document.getElementsByName('gender');
+               let chosenGender = genders[0].checked === true ? 'Nam' : 'Nữ';
+
+               // Tạo phần tử p mới
+               var p = document.createElement('p');
+               //
+               //     // Gán giá trị của trường username và password vào phần tử p
+               p.innerHTML = 'Username: ' + username + '<br>email: ' + email + '<br>sdt:'+sdt +'<br>Giới tính:'+chosenGender ;
+               //
+               //
+               //    // Thêm phần tử p vào trang web
+               document.body.appendChild(p);
+               // )
+
+               // }
+
+            }
+           // else if (document.getElementById('username').value == "") {
+           //     alert("khong hop le")
+            else  {
+                alert("không để trống thông tin")
+           }
+
         }
+
+
     </script>
 </form>
 </body>
